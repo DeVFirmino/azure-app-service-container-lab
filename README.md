@@ -34,9 +34,9 @@ It deliberately leaves out sidecar containers. Sidecars are part of the official
 
 The sequence that matters: the identity has to exist before you can grant it a role, the role has to exist before the pull can succeed, and App Service has to be told to use managed identity at all, which is a separate site setting from having the identity.
 
-![How the Web App pulls its image from the registry: the managed identity holds AcrPull on the registry, the acrUseManagedIdentityCreds site setting makes App Service use it, and application settings reach the container as environment variables](img/managed-identity-pull.png)
+![The Web App holds a managed identity, that identity has AcrPull on a private container registry, the image is pulled from there into a container listening on 8080, and app settings arrive as environment variables](img/managed-identity-pull.png)
 
-Two arrows in that drawing are doing different jobs. `AcrPull` is a control-plane grant that happens once, and it is scoped to the registry rather than to the resource group. The pull is the runtime path that uses it, and it only works because `acrUseManagedIdentityCreds` is set on the Web App. The editable source is `img/managed-identity-pull.excalidraw`.
+The two arrows on the right are doing different jobs, and that is the part worth slowing down on. `AcrPull` is a grant you make once, scoped to the registry rather than to the resource group. The pull is the runtime path that uses it, and it only happens because `acrUseManagedIdentityCreds` is set on the Web App, which is a third thing that the drawing cannot show you. Editable source: `img/managed-identity-pull.excalidraw`.
 
 ## The application
 
