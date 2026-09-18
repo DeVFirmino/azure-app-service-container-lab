@@ -4,7 +4,7 @@ Deploying a container to App Service looks like one step until the first pull fa
 
 This lab builds that path from an empty resource group, then breaks the port on purpose so you can read a real failure in the container log.
 
-![App Service uses its managed identity and an AcrPull role to pull a private ACR image; app settings configure the container on port 8080](img/managed-identity-pull.png)
+![The Web App's managed identity holds AcrPull on the private registry, so App Service can pull the image; WEBSITES_PORT tells the platform which container port to reach, while app settings arrive as environment variables](img/managed-identity-pull.png)
 
 ## The app
 

@@ -1,0 +1,264 @@
+{
+ "type": "excalidraw",
+ "version": 2,
+ "source": "daniel-diagram",
+ "appState": {
+  "viewBackgroundColor": "#FBF4E6"
+ },
+ "elements": [
+  {
+   "type": "rectangle",
+   "id": "rg",
+   "x": 50,
+   "y": 90,
+   "width": 820,
+   "height": 435,
+   "role": "zone-warm"
+  },
+  {
+   "type": "text",
+   "id": "rgt",
+   "x": 66,
+   "y": 100,
+   "text": "Resource group",
+   "fontSize": 18,
+   "font": "sans"
+  },
+  {
+   "type": "rectangle",
+   "id": "webapp",
+   "x": 85,
+   "y": 150,
+   "width": 400,
+   "height": 345,
+   "role": "zone-light"
+  },
+  {
+   "type": "text",
+   "id": "webappt",
+   "x": 101,
+   "y": 160,
+   "text": "Web App",
+   "fontSize": 16,
+   "font": "sans"
+  },
+  {
+   "type": "text",
+   "id": "webappsub",
+   "x": 101,
+   "y": 186,
+   "text": "on App Service plan · B1\nacrUseManagedIdentityCreds=true",
+   "fontSize": 11,
+   "strokeColor": "#3F6472"
+  },
+  {
+   "type": "arrow",
+   "id": "a_https",
+   "x": 370,
+   "y": 74,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     176
+    ]
+   ]
+  },
+  {
+   "type": "arrow",
+   "id": "a_env",
+   "x": 200,
+   "y": 335,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     -33
+    ]
+   ]
+  },
+  {
+   "type": "arrow",
+   "id": "a_grant",
+   "x": 450,
+   "y": 450,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     95,
+     0
+    ],
+    [
+     95,
+     -90
+    ],
+    [
+     265,
+     -90
+    ],
+    [
+     265,
+     -150
+    ]
+   ]
+  },
+  {
+   "type": "arrow",
+   "id": "a_pull",
+   "x": 590,
+   "y": 270,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     -140,
+     0
+    ]
+   ]
+  },
+  {
+   "type": "rectangle",
+   "id": "client",
+   "x": 285,
+   "y": 30,
+   "width": 170,
+   "height": 44,
+   "role": "component"
+  },
+  {
+   "type": "text",
+   "id": "clientt",
+   "x": 370,
+   "y": 45,
+   "text": "browser",
+   "fontSize": 15,
+   "anchor": "middle"
+  },
+  {
+   "type": "rectangle",
+   "id": "ctr",
+   "x": 120,
+   "y": 250,
+   "width": 330,
+   "height": 52,
+   "role": "focal"
+  },
+  {
+   "type": "text",
+   "id": "ctrt",
+   "x": 285,
+   "y": 266,
+   "text": "container  :8080",
+   "fontSize": 17,
+   "anchor": "middle"
+  },
+  {
+   "type": "rectangle",
+   "id": "cfg",
+   "x": 120,
+   "y": 335,
+   "width": 330,
+   "height": 52,
+   "role": "component"
+  },
+  {
+   "type": "text",
+   "id": "cfgt",
+   "x": 285,
+   "y": 344,
+   "text": "app settings\nAPP_VERSION · EXTERNAL_API_KEY",
+   "fontSize": 14,
+   "anchor": "middle"
+  },
+  {
+   "type": "rectangle",
+   "id": "mi",
+   "x": 120,
+   "y": 425,
+   "width": 330,
+   "height": 50,
+   "role": "focal"
+  },
+  {
+   "type": "text",
+   "id": "mit",
+   "x": 285,
+   "y": 439,
+   "text": "managed identity",
+   "fontSize": 17,
+   "anchor": "middle"
+  },
+  {
+   "type": "rectangle",
+   "id": "acr",
+   "x": 590,
+   "y": 230,
+   "width": 250,
+   "height": 70,
+   "role": "focal"
+  },
+  {
+   "type": "text",
+   "id": "acrt",
+   "x": 715,
+   "y": 248,
+   "text": "Container registry\nprivate",
+   "fontSize": 16,
+   "anchor": "middle"
+  },
+  {
+   "type": "text",
+   "id": "l_https",
+   "x": 383,
+   "y": 104,
+   "text": "HTTPS",
+   "fontSize": 13
+  },
+  {
+   "type": "text",
+   "id": "l_port",
+   "x": 357,
+   "y": 220,
+   "text": "WEBSITES_PORT=8080",
+   "fontSize": 13,
+   "anchor": "end"
+  },
+  {
+   "type": "text",
+   "id": "l_env",
+   "x": 213,
+   "y": 307,
+   "text": "env vars",
+   "fontSize": 13
+  },
+  {
+   "type": "text",
+   "id": "l_grant",
+   "x": 630,
+   "y": 338,
+   "text": "AcrPull",
+   "fontSize": 13,
+   "anchor": "middle"
+  },
+  {
+   "type": "text",
+   "id": "l_pull",
+   "x": 520,
+   "y": 246,
+   "text": "pull",
+   "fontSize": 13,
+   "anchor": "middle"
+  }
+ ]
+}

@@ -2,7 +2,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
 <style>body{margin:0;background:#FBF4E6} svg{display:block}</style></head><body>
-<svg id="s" xmlns="http://www.w3.org/2000/svg" width="910" height="560" viewBox="0 0 910 560"><rect width="100%" height="100%" fill="#FBF4E6"/></svg>
+<svg id="s" xmlns="http://www.w3.org/2000/svg" width="910" height="565" viewBox="0 0 910 565"><rect width="100%" height="100%" fill="#FBF4E6"/></svg>
 <script>
 const svg=document.getElementById('s'); const rc=rough.svg(svg);
 const rr=(x,y,w,h,r)=>`M${x+r},${y} h${w-2*r} a${r},${r} 0 0 1 ${r},${r} v${h-2*r} a${r},${r} 0 0 1 -${r},${r} h-${w-2*r} a${r},${r} 0 0 1 -${r},-${r} v-${h-2*r} a${r},${r} 0 0 1 ${r},-${r} z`;
@@ -12,31 +12,31 @@ function arrow(pts,stroke){svg.appendChild(rc.linearPath(pts,{stroke,strokeWidth
  const p1=[b[0]-L*Math.cos(ang)+W*Math.sin(ang),b[1]-L*Math.sin(ang)-W*Math.cos(ang)];const p2=[b[0]-L*Math.cos(ang)-W*Math.sin(ang),b[1]-L*Math.sin(ang)+W*Math.cos(ang)];
  svg.appendChild(rc.linearPath([p1,b,p2],{stroke,strokeWidth:2,roughness:0.8}));}
 function text(x,y,t,fs,c,fam,w,anchor){const e=document.createElementNS('http://www.w3.org/2000/svg','text');e.setAttribute('x',x);e.setAttribute('y',y);e.setAttribute('font-size',fs);e.setAttribute('fill',c);e.setAttribute('font-family',fam);e.setAttribute('font-weight',w);e.setAttribute('text-anchor',anchor);e.textContent=t;svg.appendChild(e);}
-rect(50,90,820,430,'#F7EDDA','#79513C',1.0);
-rect(85,150,360,340,'#FDF7EA','#3F6472',1.0);
-arrow([[205, 74], [205, 200]],'#51463C');
-arrow([[410, 297], [490, 297], [490, 160], [715, 160], [715, 200]],'#51463C');
-arrow([[590, 250], [520, 250], [520, 369], [410, 369]],'#51463C');
-arrow([[265, 428], [265, 394]],'#51463C');
-rect(120,30,170,44,'#C9D6DC','#3F6472',1.0);
-rect(120,200,290,58,'#C9D6DC','#3F6472',1.0);
-rect(120,272,290,50,'#EFCDB4','#C85A32',1.0);
-rect(120,344,290,50,'#EFCDB4','#C85A32',1.0);
-rect(120,428,290,52,'#C9D6DC','#3F6472',1.0);
-rect(590,200,250,70,'#EFCDB4','#C85A32',1.0);
+rect(50,90,820,435,'#F7EDDA','#79513C',1.0);
+rect(85,150,400,345,'#FDF7EA','#3F6472',1.0);
+arrow([[370, 74], [370, 250]],'#51463C');
+arrow([[200, 335], [200, 302]],'#51463C');
+arrow([[450, 450], [545, 450], [545, 360], [715, 360], [715, 300]],'#51463C');
+arrow([[590, 270], [450, 270]],'#51463C');
+rect(285,30,170,44,'#C9D6DC','#3F6472',1.0);
+rect(120,250,330,52,'#EFCDB4','#C85A32',1.0);
+rect(120,335,330,52,'#C9D6DC','#3F6472',1.0);
+rect(120,425,330,50,'#EFCDB4','#C85A32',1.0);
+rect(590,230,250,70,'#EFCDB4','#C85A32',1.0);
 text(66,117.1,"Resource group",18,'#79513C',"'Karla', sans-serif",'600','start');
-text(101,175.2,"App Service plan  \u00b7  B1",16,'#3F6472',"'Karla', sans-serif",'600','start');
-text(205,59.25,"browser",15,'#26211C',"'Courier Prime', monospace",'400','middle');
-text(265,221.2,"Web App",16,'#26211C',"'Courier Prime', monospace",'400','middle');
-text(265,240.45,"acrUseManagedIdentityCreds=true",11,'#26211C',"'Courier Prime', monospace",'400','middle');
-text(265,304.15,"managed identity",17,'#8F3D22',"'Courier Prime', monospace",'400','middle');
-text(265,376.15,"container  :8080",17,'#8F3D22',"'Courier Prime', monospace",'400','middle');
-text(265,450.3,"app settings",14,'#26211C',"'Courier Prime', monospace",'400','middle');
-text(265,467.8,"WEBSITES_PORT=8080",14,'#26211C',"'Courier Prime', monospace",'400','middle');
-text(715,233.2,"Container registry",16,'#8F3D22',"'Courier Prime', monospace",'400','middle');
-text(715,253.2,"private",16,'#8F3D22',"'Courier Prime', monospace",'400','middle');
-text(218,136.35,"HTTPS",13,'#26211C',"'Courier Prime', monospace",'400','start');
-text(600,150.35,"AcrPull",13,'#26211C',"'Courier Prime', monospace",'400','middle');
-text(550,352.35,"pull",13,'#26211C',"'Courier Prime', monospace",'400','middle');
-text(284,412.35,"env vars",13,'#26211C',"'Courier Prime', monospace",'400','start');
+text(101,175.2,"Web App",16,'#3F6472',"'Karla', sans-serif",'600','start');
+text(101,196.45,"on App Service plan \u00b7 B1",11,'#3F6472',"'Courier Prime', monospace",'400','start');
+text(101,210.2,"acrUseManagedIdentityCreds=true",11,'#3F6472',"'Courier Prime', monospace",'400','start');
+text(370,59.25,"browser",15,'#26211C',"'Courier Prime', monospace",'400','middle');
+text(285,282.15,"container  :8080",17,'#8F3D22',"'Courier Prime', monospace",'400','middle');
+text(285,357.3,"app settings",14,'#26211C',"'Courier Prime', monospace",'400','middle');
+text(285,374.8,"APP_VERSION \u00b7 EXTERNAL_API_KEY",14,'#26211C',"'Courier Prime', monospace",'400','middle');
+text(285,455.15,"managed identity",17,'#8F3D22',"'Courier Prime', monospace",'400','middle');
+text(715,263.2,"Container registry",16,'#8F3D22',"'Courier Prime', monospace",'400','middle');
+text(715,283.2,"private",16,'#8F3D22',"'Courier Prime', monospace",'400','middle');
+text(383,116.35,"HTTPS",13,'#26211C',"'Courier Prime', monospace",'400','start');
+text(357,232.35,"WEBSITES_PORT=8080",13,'#26211C',"'Courier Prime', monospace",'400','end');
+text(213,319.35,"env vars",13,'#26211C',"'Courier Prime', monospace",'400','start');
+text(630,350.35,"AcrPull",13,'#26211C',"'Courier Prime', monospace",'400','middle');
+text(520,258.35,"pull",13,'#26211C',"'Courier Prime', monospace",'400','middle');
 </script></body></html>
