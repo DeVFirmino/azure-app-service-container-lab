@@ -223,19 +223,38 @@ The delete removes the Web App, plan, registry, image, identity and the registry
 
 ## Evidence checklist
 
-Nothing here has been run. This repository is the material; the record is yours.
+Session record — 18 September 2026: Azure deployment and cleanup completed.
+The troubleshooting exercise was stopped after observing a timeout; recovery was
+not tested before cleanup. The local Docker exercise was not run in this session.
 
 - [ ] Local build ran, four endpoints answered, `whoami` printed `appuser`
-- [ ] Registry shows `admin: False` and `mode: RBAC`
-- [ ] `az acr build` succeeded and the tag is listed
-- [ ] Role assignment created with the registry resource ID as scope
-- [ ] `acrUseManagedIdentityCreds` applied
-- [ ] All four endpoints answered, and `az webapp config container show` names the expected image
+- [x] Registry shows `admin: False` and `mode: LegacyRegistryPermissions` (RBAC)
+- [x] `az acr build` succeeded and the tag is listed
+- [x] Role assignment created with the registry resource ID as scope
+- [x] `acrUseManagedIdentityCreds` applied
+- [x] All four endpoints returned HTTP 200; `LinuxFxVersion` in the configuration output names the expected image
 - [ ] Broken-port log showed a clean start on 8080 and a ping failure on 8000
 - [ ] Restoring 8080 returned the site to 200
-- [ ] `az group exists` returned `false`
+- [x] `az group exists` returned `false`
 
-Then answer one question in writing: which identity pulled the image, and how do you know.
+### Session evidence
+
+- North Europe rejected the B1 plan with a quota limit of zero. The plan and Web App
+  were successfully created in West Europe; the ACR remained in North Europe.
+- ACR Tasks run `cg1` built and pushed `appservice-config-api:v1` successfully.
+- The Web App's system-assigned managed identity received `AcrPull` on the registry,
+  and `acrUseManagedIdentityCreds` was confirmed as `True`. These settings and the
+  successful container startup support the intended identity-based pull path;
+  registry authentication audit logs were not collected.
+- `/` returned `{"application":"appservice-config-api","version":"v1"}`;
+  `/config` returned `{"external_api_key_configured":true}`. Both health endpoints
+  returned their expected status bodies with HTTP 200.
+- After setting `WEBSITES_PORT=8000`, application logs still showed Uvicorn listening
+  on `0.0.0.0:8080`. Platform logs showed the startup probe waiting. A subsequent
+  request timed out after 30 seconds with zero bytes received. No explicit port-8000
+  probe failure or HTTP 503 was captured, so the full diagnostic checklist remains open.
+- The resource group was deleted at the learner's request. `az group exists` returned
+  `false`, confirming cleanup. The port was not restored before deletion.
 
 ## References
 
